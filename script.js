@@ -26,7 +26,6 @@ let multiItemSlider = (function () {
       interval: 2000, // интервал между автоматической сменой слайдов
       pause: true // устанавливать ли паузу при поднесении курсора к слайдеру
     };
-    console.log(sliderItem[0]);
 
     for (let key in _config) {
       if (key in config) {
@@ -98,7 +97,7 @@ let multiItemSlider = (function () {
     sliderItem[position.getMiddleItem()].classList.toggle('itemWidth');
     arrDot[position.getMiddleItem()].classList.toggle('dotAction');
 
-    if(direction === 'right'){
+    if(direction === 'left'){
       positionLeftItem--;
       middle--;
       let index = position.getMaxItem();
@@ -112,7 +111,7 @@ let multiItemSlider = (function () {
       transform += itemWidth;
     }
 
-    if(direction === 'left'){
+    if(direction === 'right'){
       positionLeftItem++;
       middle++;
       if(positionLeftItem + 4 > position.getMaxItem()){
